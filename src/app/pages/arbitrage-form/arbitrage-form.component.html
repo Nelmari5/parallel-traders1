@@ -1,0 +1,5 @@
+<div class="container">
+    <form #userArb="ngForm" [formGroup]="form" (ngSubmit)="submit(userArb.value)" style="background:black !important;">
+        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+    </form>
+</div>

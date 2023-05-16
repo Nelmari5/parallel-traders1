@@ -1,0 +1,14 @@
+
+<mat-card-content fxLayoutAlign="center"  style="width: 40vw;" *ngIf='showSpinner'>
+    <mat-spinner></mat-spinner>
+</mat-card-content>
+<!-- <form  (ngSubmit)="onSubmit()" style="width: 40vw;"  *ngIf='!showSpinner'> -->
+    <div  *ngIf='!showSpinner' style="width: 40vw;">
+        <label>Target Amount:</label>
+        <input type="number" class="form-control" [(ngModel)]='targetAmount' />
+        <label>Target Date:</label>
+        <input type="date" class="form-control" [(ngModel)]='targetDate'  [min]="todayDate" />
+        <input type="submit" (click)='onSubmit()' style="margin-top: 3vh; margin-left: 15vw;" class="btn btn-primary" value="Submit" /> 
+    </div>
+<!-- </form> -->
+<!-- <br/> -->

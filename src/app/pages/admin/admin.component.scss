@@ -1,0 +1,40 @@
+.arb_img {
+    padding: 40px 0px;
+}
+.arb_form {
+    background: #F8F8F8;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: -webkit-center;
+    padding: 50px 10px;
+}
+.arb_formContent {
+    text-align: left;
+    padding: 0px 150px;
+}
+.arb_formContent ul {
+    list-style-type: none;
+}
+
+.arb_form .arb_formContent {
+    width: 80%;
+}
+.arb_form .arb_formContent .terms {
+    width: 500px !important;
+}
+.arb_form a{
+    color: #D63970;
+}
+
+
+@media screen and (max-width: 767px){
+    .arb_img img {
+      width: 100%;
+    }
+    .arb_formContent {
+      padding:0px 0px;
+    }
+    .arb_form p {
+        width:190px !important;
+    }
+  }

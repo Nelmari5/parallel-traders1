@@ -1,0 +1,462 @@
+<div class="container">
+   <div class="container bootstrap snippets bootdey">
+<div class="panel-body inf-content">
+    <div class="row">
+        <div class="col-md-12">
+            <strong>Information</strong><br>
+            <div class="table-responsive">
+
+            <div class="col-md-6">
+                <table class="table table-user-information">
+                    <tbody>
+                        <div class="col-md-6">
+                        <tr>        
+                            <td>
+                                <strong>ID Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.idNumber}}     
+                            </td>
+                        </tr>
+                        <tr>    
+                            <td>
+                                <strong>Title</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.title}}    
+                            </td>
+                        </tr>
+                        <tr>    
+                            <td>
+                                <strong>Name</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.firstName}}     
+                            </td>
+                        </tr>
+                        <tr>        
+                            <td>
+                                <strong>Lastname</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.lastName}}   
+                            </td>
+                        </tr>
+    
+                        <tr>    
+                            <td>
+                                <strong>Gender</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.gender}}  
+                            </td>
+                        </tr>
+                        
+                        <tr>        
+                            <td>
+                                <strong>Maritial Status</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.maritialStatus}}   
+                            </td>
+                        </tr>
+                        </div>
+
+                        <div class="col-md-6">
+                        <tr>        
+                            <td>
+                                <strong>Date of birth</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.dob}}   
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Birth Place</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.birthPlace}}   
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Citizenship</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.resCountry}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Residential Status</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.resStatus}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Tax Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.taxNumber}} 
+                            </td>
+                        </tr>
+                                                               
+                        <tr *ngIf="user.juristrictions1country">        
+                            <td>
+                                <strong>Additional Juristiction Country</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.juristrictions1country}} 
+                            </td>
+                        </tr>
+    
+                        <tr *ngIf="user.juristrictions1additionalcountrytaxnr">        
+                            <td>
+                                <strong>Additional Juristiction Tax Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.juristrictions1additionalcountrytaxnr}} 
+                            </td>
+                        </tr>
+                        </div>
+
+                        <div class="col-md-6">
+                        <tr *ngIf="user.juristrictions2country">        
+                            <td>
+                                <strong>Additional Juristiction Country</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.juristrictions2country}} 
+                            </td>
+                        </tr>
+    
+                        <tr *ngIf="user.juristrictions2additionalcountrytaxnr">        
+                            <td>
+                                <strong>Additional Juristiction Tax Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.juristrictions2additionalcountrytaxnr}} 
+                            </td>
+                        </tr>
+    
+                        <tr *ngIf="user.juristrictions3country">        
+                            <td>
+                                <strong>Additional Juristiction Country</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.juristrictions3country}} 
+                            </td>
+                        </tr>
+    
+                        <tr *ngIf="user.juristrictions3additionalcountrytaxnr">        
+                            <td>
+                                <strong>Additional Juristiction Tax Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.juristrictions3additionalcountrytaxnr}} 
+                            </td>
+                        </tr>
+    
+                        <tr *ngIf="user.additionalCitizenshipStatus == 1">        
+                            <td>
+                                <strong>Additional Citizenship</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.additionalCitizenship}} 
+                            </td>
+                        </tr>
+                        
+                        <tr>        
+                            <td>
+                                <strong>Email</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.email}} 
+                            </td>
+                        </tr>
+                        </div>
+
+                        <div class="col-md-6">
+                        <tr>        
+                            <td>
+                                <strong>Mobile</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.phoneNumber}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Address</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.streetAddress}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Unit Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.streetNumber}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>City</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.city}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>State / Province</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.stateProvince}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Country</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.country}} 
+                            </td>
+                        </tr>
+    
+                        <tr>        
+                            <td>
+                                <strong>Postal Address</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.postal}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Bank</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.bankName}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Bank Account Holder</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.accHolderName}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Branch Code</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.branchCode}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Account Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.bankAccount}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Occupation</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.occupation}} 
+                            </td>
+                        </tr>
+                    </div>
+
+                    <div class="col-md-6">
+                        <tr>
+                            <td>
+                                <strong>Employer</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.employer}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Business Description</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.businessDesc}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Avarage income</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.income}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Other Investments</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.investments}} 
+                            </td>
+                        </tr>
+    
+                        <tr *ngIf="user.socialSecurity">
+                            <td>
+                                <strong>US Social Security Number</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.socialSecurity}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>PIP Status</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.pipStatus}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>SDA / FIA</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.sdaFia}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Capital Amount</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.capitalAmount}} 
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <strong>Utilize Amount</strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.utilizeAmount}} 
+                            </td>
+                        </tr> 
+                    </div>  
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="col-md-6">
+                <table>
+                    <tbody>
+                    <tr *ngIf="poa_image">   
+                            <td>
+                                <strong>Proof of address</strong>
+                            </td>
+                            <td class="text-primary">
+                                <img style="max-width: 45%;" [src]="poa_image" alt="" >
+                            </td>
+                        </tr>  
+
+                        <tr *ngIf="funds_image">   
+                            <td>
+                                <strong>Funds Documents</strong>
+                            </td>
+                            <td class="text-primary">
+                                <img style="max-width: 45%;" [src]="funds_image" alt="" >
+                            </td>
+                        </tr> 
+
+                        <tr *ngIf="id_selfie_image">   
+                            <td>
+                                <strong>ID Selfie</strong>
+                            </td>
+                            <td class="text-primary">
+                                <img style="max-width: 45%;" [src]="id_selfie_image" alt="" >
+                            </td>
+                        </tr>
+
+                        <tr *ngIf="id_scan_image">   
+                            <td>
+                                <strong>ID Scanned</strong>
+                            </td>
+                            <td class="text-primary">
+                                <img style="max-width: 45%;" [src]="id_scan_image" alt="" >
+                            </td>
+                        </tr>  
+                        
+                        <tr *ngIf="id_back_image">   
+                            <td>
+                                <strong>ID Back</strong>
+                            </td>
+                            <td class="text-primary">
+                                <img style="max-width: 45%;" [src]="id_back_image" alt="" >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-6">
+                <form #arbProcessUser="ngForm" (ngSubmit)="onSubmit(arbProcessUser.value)">
+                    <div class="form-check arb-user-email">
+                        <label for="authKey">API Key</label>
+                        <input type="text" class="form-control" id="authKey" name="api_key" placeholder="Enter API KEY" required ngModel/>
+                    </div>
+                    
+                    <div class="form-check arb-user-checkbox">
+                        <label class="form-check-label" for="isProcessed">Process User Acount</label>
+                        <input type="checkbox" class="form-check-input" name="isProcessed" id="isProcessed" required ngModel/>
+                    </div>
+                    <input type="hidden" [(ngModel)]='idNumber' name="id_number" ngModel/>
+                    <div class="col-12 col-md-12">
+                        <div class="formTwoSubmit">
+                            <a mat-button color="accent" class="w-100">
+                            <button type="submit" onMouseOver="this.style.color='#5BCFB4', this.style.background='transparent'"
+                                onMouseOut="this.style.background='#5BCFB4', this.style.color='#fff'" mat-raised-button
+                                style="background: #5BCFB4 !important; border: 1px solid #5BCFB4 !important; color: white !important; padding:10px 20px;"
+                                class="mat-elevation-z6 w-30 mt-3">Submit</button>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>  
+</div>

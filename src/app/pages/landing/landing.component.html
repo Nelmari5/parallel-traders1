@@ -1,0 +1,116 @@
+<mat-toolbar id="navbar" class="landing-toolbar mat-elevation-z4" style="margin-top: 70px; border-bottom:white 2px solid;">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex >
+        <div class="contactDeets">
+            <div class="phoneDeets">
+                <!-- <p> <i class="fa fa-phone"></i>+2270009909</p> -->
+            </div>
+            <div class="socialDeets">
+                <p>Follow us on social media: 
+                    <a href="/"><i class="fa fa-facebook"></i></a>
+                    <a href="/"><i class="fa fa-twitter"></i></a>
+                    <a href="/"><i class="fa fa-linkedin"></i></a>
+                    <a class="login" routerLink='/login'>Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>
+<mat-toolbar class="landing-toolbar landing-toolbarMobile" style="margin-top: 135px;">
+    <div class="testTop" fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+        <div fxLayout="row" fxLayoutAlign="center center">               
+            <a routerLink="/" fxLayout="row" fxLayoutAlign="start center" class="logo">
+                <img src="assets/img/logo.png" alt="logo" style="width:100%;">
+            </a>
+        </div> 
+        <div class="signUpBtn" fxLayout="row" fxLayoutAlign="center center">
+            <div fxShow="false" fxShow.gt-sm>
+                <button *ngFor="let item of menuItems" mat-button [ngx-scroll-to]="item" [ngx-scroll-to-duration]="300" class="mx-1">{{item}}</button> 
+            </div>
+            <button mat-icon-button (click)="sidenav.toggle()" fxHide="false" fxHide.gt-sm class="mx-3">
+                <mat-icon>menu</mat-icon>
+            </button> 
+            <a mat-raised-button routerLink='/register'>Sign up</a>                             
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-drawer-container class="landing-container h-100" style="height:100% !important">     
+    <mat-drawer #sidenav mode="over" class="landing-sidenav mat-elevation-z6 p-2" autoFocus="false">
+          <button *ngFor="let item of menuItems" mat-button [ngx-scroll-to]="item" [ngx-scroll-to-duration]="300" (click)="sidenav.toggle()" class="w-100">{{item}}</button>         
+    </mat-drawer> 
+
+    <mat-drawer-content> 
+        <div class="firstSection ">
+            <div class="firstSection_content">
+                <h4>NEED FUNDS FOR TRADING?</h4>
+                <h4>LOOK NO FURTHER</h4>
+                <button class="button" routerLink='/login'>
+                   <span> Join Parallel </span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="p-2" style="background:white !important;">
+            <app-features id='Our Services'></app-features>
+            <app-pricing id='Phased Launch'></app-pricing> 
+            <app-contact-us id='Contact us'></app-contact-us> 
+        </div>
+
+        <div class="footer col-md-12">
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-8" style="float:left;">
+                        <!-- Hello -->
+                        <ul class="mt-3">
+                            <li class="footerText">
+                               <a href="#features">Our Services</a>
+                            </li>
+                            <li class="mt-2 footerText">
+                               <a href="#contact">About Us</a>
+                           </li>
+                           <li class="mt-2 footerText">
+                               <a href="#contact">Contact Us</a>
+                           </li>
+                           <li class="mt-2 footerText">
+                               <p href="">Follow us on social media: 
+                                    <a href="/"><i class="fa fa-facebook"></i></a>
+                                    <a href="/"><i class="fa fa-twitter"></i></a>
+                                    <a href="/"><i class="fa fa-linkedin"></i></a>
+                               </p>
+                           </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-3 newsLetter" style="float:right;">
+                        <!-- Newsletter -->
+                        <h4>Sign up to our mailing list!</h4>
+                        <div>
+                            <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit(contactForm.value)" fxLayout="row wrap">
+                                
+                                <div fxFlex="100" class="mt-2" style="width:300px;">
+                                    <mat-form-field class="w-100">
+                                        <input class="placeholder" matInput placeholder="Email" formControlName="email" required>
+                                        <mat-error *ngIf="contactForm.controls.email.errors?.required">Please enter your Email Address here</mat-error>
+                                        <mat-error *ngIf="contactForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                
+                                <div class="text-center" style="float: right;">
+                                    <button mat-raised-button color="accent" type="submit" class="send">
+                                        Send</button>
+                                </div> 
+                            </form>
+                        </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="bottom" class="bottom">
+            <p>
+                © 2020 PARALLEL - All rights reserved
+            </p>
+        </section>
+
+    </mat-drawer-content>
+</mat-drawer-container>

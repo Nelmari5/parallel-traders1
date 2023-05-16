@@ -1,0 +1,36 @@
+#app{
+    display: none;
+}
+input {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    color:#fff;
+}
+.mat-form-field {
+    width: 100%;
+}
+form {
+    border: 1px solid #5BCFB4;
+    border-radius: 10px;
+}
+button {
+    background: #5BCFB4 !important;
+    border: 1px solid #5BCFB4 !important;
+    color: white !important;
+}
+button:hover {
+    background: transparent !important;
+    border: 1px solid #5BCFB4 !important;
+    color: #5BCFB4 !important;
+}
+h1{
+    font-family: Arial Rounded MT Bold !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+} 

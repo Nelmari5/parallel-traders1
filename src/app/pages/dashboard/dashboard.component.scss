@@ -1,0 +1,15 @@
+.arrow{
+    float: left;padding-left: 0px;padding-right: 0px; border: 1px solid;
+}
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #11172aea;
+    z-index: 2;
+    cursor: pointer;
+  }

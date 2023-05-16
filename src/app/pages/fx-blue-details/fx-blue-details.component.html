@@ -1,0 +1,47 @@
+<mat-sidenav-container class="h-100" style="background:#11172A !important;">
+  <div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" fxFlex="90" fxFlex.gt-sm="30" fxFlex.sm="60"
+      class="mat-elevation-z6">
+      <app-content-header [title]="'Register'" [hideBreadcrumb]="true" [hasBgImage]="false" [class]="'py-4'">
+      </app-content-header>
+      <div class="p-3">
+
+
+            <input (ngModelChange)="checkValue($event)" formControlName='hasAccount' type="checkbox">
+            <label style="color:#fff;">Do you have Fx Blue account</label>
+            <mat-form-field class="10" *ngIf='hasFxAccount'>
+              <input matInput placeholder="Fx blue user name" formControlName="username">
+              <!-- <mat-error *ngIf="form.controls.name.errors?.required">Full Name is required</mat-error>
+                    <mat-error *ngIf="form.controls.name.hasError('minlength')">Full Name isn't long enough, minimum of 3 characters</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="10" *ngIf='hasFxAccount'>
+              <input matInput placeholder="Fx blue password" type="password" formControlName="userpassword">
+            </mat-form-field>
+            <mat-form-field class="10" *ngIf='!hasFxAccount'>
+              <input matInput placeholder="Broker server" aria-label="State" [matAutocomplete]="auto"
+                [formControl]="stateCtrl" formControlName="bankFilterCtrl">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let state of filteredStates | async" [value]="state.value">
+                  <span>{{state.value}}</span>
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <mat-form-field class="10" *ngIf='!hasFxAccount'>
+              <input matInput placeholder="Account number" type="text" formControlName="accNumber">
+            </mat-form-field>
+            <mat-form-field class="10" *ngIf='!hasFxAccount'>
+              <input matInput placeholder="Account Password" type="password" formControlName="accPassword">
+            </mat-form-field>
+
+        <button mat-raised-button class="w-100 mt-3" type="submit">SIGN UP</button>
+      </div>
+    </form>
+  </div>
+  <div id="app-spinner" [class.hide]="hideSpinner">
+    <!--<mat-spinner color="primary"></mat-spinner> -->
+    <img src="assets/img/logo.png" class="animated-logo">
+    <h4>loading...</h4>
+  </div>
+</mat-sidenav-container>
+<!-- [class.hide]="!settings.loadingSpinner" -->

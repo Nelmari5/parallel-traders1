@@ -1,0 +1,55 @@
+.profile {
+    background: #F8F8F8;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    padding: 30px 30px;
+    margin-top:50px;
+}
+.arb_heading {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+.arb_headingBorder {
+    border-bottom:2px solid black;
+    width: 40px;
+    margin-bottom:30px;
+}
+.personal_deets {
+    display: grid;
+}
+input {
+    border: 1px solid #11172A;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 8px 8px 8px 0px;
+}
+button {
+    border-radius: 5px;
+    border: solid 1px #5BCFB4;
+    padding: 5px 10px;
+    width: 44%;
+    margin: 5px;
+}
+.discard {
+    background: transparent;
+    color: #5BCFB4;
+}
+.discard:hover {
+    background: #5BCFB4;
+    color: #fff;
+}
+
+.save {
+    background: #5BCFB4;
+    color: white;
+}
+.save:hover {
+    background: #fff;
+    color: #5BCFB4;
+}

@@ -1,0 +1,94 @@
+<div *ngIf="loading == true" class="loading">
+    <div class="loader"></div>
+</div>
+<div *ngIf="user == false" class="container">
+
+    <div class="arb_form">
+
+        <div class="arb_img">
+            <img src="../../../assets/img/arbtrageLogo.png" alt="">
+        </div>
+    
+        <div class="arb_formContent">
+            <h3 class="arb_heading">
+                Arbitrage Service
+            </h3>
+            <div class="arb_headingBorder"></div>
+            <p>The Parallel Arbitrage Service in partnership with Ovex is a product that is designed to exploit mismatches in the price of Bitcoin in
+                South African Rands (ZAR). Over the past 4 years, BTC/ZAR markets have traded at an average premium of 4.6%
+                to BTC/USD markets.
+                <br/>
+                <br/>
+    
+                The Arbitrage Service enables Parallel customers from South Africa to use their annual Single Discretionary
+                Allowance (SDA) of R1 million and Foreign Investment Allowance (FIA) up to an additional R10 million to earn
+                arbitrage trading profits.
+                <br/>
+                <br/>
+    
+                Complete the three steps below to get access to the Arbitrage Service.
+                <br/>
+                <br/>
+    
+                Please note that you will need a valid South African ID Book/Card in order to complete the application
+                process, and a minimum capital amount of R50,000.
+            </p>
+    
+            <ul>
+                <li> <i class="fa fa-times-circle"></i> Submit Account Information</li>
+                <li> <i class="fa fa-times-circle"></i> Upload Proof of Identity Documents</li>
+                <li> <i class="fa fa-times-circle"></i> Upload Proof of Address Document</li>
+                <li> <i class="fa fa-times-circle"></i> Upload Source of Funds Documents</li>
+            </ul>
+        </div>
+        
+        <p style="width: 500px; padding-top:50px;">
+            By applying to use the Parallel Arbitrage Service in partnership with Ovex, you declare that you have read and agree to the Parallel Arbitrage <a href="">Terms of Service.</a> 
+        </p>
+
+        <a mat-button routerLink="/loggedin/arbitrage-form" color="accent" class="w-100"> 
+            <button onMouseOver="this.style.color='#5BCFB4', this.style.background='transparent'"
+            onMouseOut="this.style.background='#5BCFB4', this.style.color='#fff'" mat-raised-button
+            style="background: #5BCFB4 !important; border: 1px solid #5BCFB4 !important; color: white !important; padding:10px 20px;"
+            class="mat-elevation-z6 w-30 mt-3">Get Started</button>
+        </a>
+
+        <br/>
+
+    </div>
+</div>
+
+<div *ngIf="user == true" class="container">
+
+    <div *ngIf="isProcessed == true" class="card arb-card">
+        <h5 class="card-header">Account Overview</h5>
+        <div class="card-body">
+            <h5 class="card-title">Account balance's</h5>
+            <p *ngFor="let dispData of userDataRaw; let i = index" class="card-text">{{i+1}} : {{dispData.currency}}: <span>{{dispData.balance}}</span>.</p>
+            <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+            </canvas>
+        </div>
+    </div>
+
+    <div *ngIf="isProcessed == false" class="container">
+        <div class="arb_form arb-card">
+
+        <div class="arb_img">
+            <img src="../../../assets/img/arbtrageLogo.png" alt="">
+        </div>
+    
+        <div class="arb_formContent">
+            <h3 class="arb_heading">
+                Your Parallel Arbitrage Account is currently being processed. Please check back in 3 to 5 days.
+            </h3>
+        </div>
+    </div><!-- isProccessd false -->
+
+
+
+
+</div>

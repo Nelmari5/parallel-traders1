@@ -1,0 +1,141 @@
+#features {
+    height: 580px !important;
+    background-position: center;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    margin-top: -110px !important;
+    background: url(../../../../assets/img/serviceBg.png);
+}
+
+.middle{
+    height: 45vh;
+}
+.text{
+    font-size: 1.35rem;
+    margin-bottom: 16px; 
+    font-weight: 400;
+}
+.serviceSection {
+    background: white;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation-name: test;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    position: relative;
+    animation-delay: 0s;
+    @keyframes test {
+        0%   { top:200px;}
+        75%  { top:0px;}
+    }
+}
+.serviceHeading {
+    text-align: center;
+    padding-top: 30px;
+}
+.serviceHeading h1 {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #152448;
+    padding-bottom: 30px;
+}
+.serviceHeading h4 {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+}
+.arbitrage-section {
+    display: flex;
+}
+.serviceContent {
+    text-align: left !important;
+}
+.serviceContent a {
+    background: #5BCFB4;
+    border-radius: 10px;
+    border: 1px solid #5BCFB4;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.arb_heading {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-top:30px;
+}
+.arb_headingBorder {
+    border-bottom:2px solid black;
+    width: 40px;
+    margin-bottom:10px;
+}
+.serviceContent p {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    width: 60%;
+}
+
+
+
+@media screen and (max-width: 767px){
+    .arbitrage-section {
+        display: block;
+    }
+    .serviceSection {
+        background: white;
+        padding: 20px;
+        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    .serviceContent {
+        text-align: center !important;
+    }
+    .serviceContent p {
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #000000;
+        width: unset;
+        padding: 0px 50px;
+    }
+    .arb_headingBorder {
+        border-bottom: 2px solid black;
+        width: 40px;
+        margin-bottom: 10px;
+        margin-left: 43%;
+    }
+    .arbitrage-section img {
+        width:100%;
+    }
+    .timelineConetnt {
+        text-align: left !important;
+        padding: 30px;
+        margin-top: 15%;
+    }
+}

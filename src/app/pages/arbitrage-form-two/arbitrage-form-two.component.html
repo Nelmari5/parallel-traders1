@@ -1,0 +1,124 @@
+<div class="container">
+  <form #arbTwo="ngForm" (ngSubmit)="onSubmit(arbTwo.value)" >
+  <input type="hidden" [(ngModel)]='idNumber' name="id_number" ngModel/>
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="arb_form">
+
+        <h3>Proof of Address</h3>
+        <br/>
+
+        <label for="address_proof_doc_type">Select Document type</label>
+        <div class="select">
+          <select name="address_proof_doc_type" id="slct" ngModel>
+            <option selected disabled>Choose an option</option>
+            <option value="bank-credit-card">Bank Statement</option>
+            <option value="lease">Lease Agreement</option>
+            <option value="utility">Utility Bill</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <br/>
+
+        <p> <i> Upload a scanned copy of your proof of address. Please ensure that your full name and address are
+            visible, and that the document is no less than 3 months old. </i> </p>
+
+        <label for="address_proof_doc">Select a file:</label>
+        <input type="file" id="poa" accept="image/*" (change)="handlePoaFileInput($event.target.files)">
+        
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 col-xs-12" >
+      <div class="arb_form">
+
+        <h3>Proof of Identity</h3>
+        <br/>
+
+        <label for="id_proof_doc_type">Select Document type</label>
+        <div class="select">
+          <select name="id_proof_doc_type" id="slct" ngModel>
+            <option selected disabled>Choose an option</option>
+            <option value="selfie">Selfie</option>
+            <option value="scanned">Scanned</option>
+          </select>
+        </div>
+
+        <br/>
+
+        <label for="scanned_proof_id">ID Book / Front of ID card</label>
+        <p> <i> Upload a scanned copy of your Government issue ID Book or Card. Please ensure that all text is visible.
+          </i> </p>
+        
+        <input type="file" id="scanned_proof_id" accept="image/*" (change)="handleScannedProofFileInput($event.target.files)">
+
+        <br />
+        <br />
+
+        <label for="selfie_proof_id">Selfie with ID Book / Card</label>
+        <p> <i> Upload a selfie with your Government issue ID Book or Card. Please ensure that all text is visible. </i>
+        </p>
+        
+        <input type="file" id="selfie_proof_id" accept="image/*" (change)="handleSelfieProofFileInput($event.target.files)">
+
+        <br/>
+        <br/>
+
+        <label for="id_doc_selfie_back">Back of ID Card (if applicable)</label>
+        <p> 
+          <i>
+            If you are using an ID Card and not an ID Book, please upload a scanned copy of the back 
+            of the card here. If you are using an ID Book then leave this field blank. Please ensure that all text is visible.
+          </i>
+        </p>
+        
+        <input type="file" id="id_doc_selfie_back" accept="image/*" (change)="handleIDSelfieBackProofFileInput($event.target.files)">
+
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 col-xs-12" >
+      <div class="arb_form">
+
+        <h3>Source of Funds</h3>
+
+        <br/>
+
+        <label for="source_funds">Select Document type</label>
+        <div class="select">
+          <select name="source_funds" id="slct" ngModel>
+            <option selected disabled>Choose an option</option>
+            <option value="savings">Savings Account</option>
+            <option value="sale_property">Sale of Property</option>
+            <option value="inheritance_loan">Inheritance or Loan</option>
+          </select>
+        </div>
+
+        <br />
+        <br />
+
+        <p> <i> Upload the source of funds documentation that indicates the
+            origin of your funds used for the arbitrage service. Upload no
+            more than three documents. The source of funds will indicate
+            that the funds are your own funds being used for the service. </i> </p>
+
+        <label for="source_funds_proof">Select a file:</label>
+        <input type="file" id="source_funds_proof" accept="image/*" (change)="handleSourceFundFileInput($event.target.files)">
+
+      </div>
+    </div>
+
+    <div class="col-12 col-md-12">
+      <div class="formTwoSubmit">
+        <a mat-button color="accent" class="w-100">
+          <button type="submit" onMouseOver="this.style.color='#5BCFB4', this.style.background='transparent'"
+            onMouseOut="this.style.background='#5BCFB4', this.style.color='#fff'" mat-raised-button
+            style="background: #5BCFB4 !important; border: 1px solid #5BCFB4 !important; color: white !important; padding:10px 20px;"
+            class="mat-elevation-z6 w-30 mt-3">Submit</button>
+        </a>
+      </div>
+    </div>
+
+  </form>
+</div>

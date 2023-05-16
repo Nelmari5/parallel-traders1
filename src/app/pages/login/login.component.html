@@ -1,0 +1,41 @@
+<mat-sidenav-container id="login-page" class="h-100 login-page" style="background:#11172A;">
+  <div fxLayout="row" fxLayoutAlign="center center" class="h-100" >
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" fxFlex="90" fxFlex.gt-sm="30" fxFlex.sm="60"
+      class="mat-elevation-z6" style="border: 1px solid #5BCFB4; border-radius: 10px;">
+      <app-content-header [title]="'Login'" [hideBreadcrumb]="true" [hasBgImage]="false" [class]="'py-4'">
+      </app-content-header>
+
+      <div class="p-3 login">
+        <mat-form-field class="w-100">
+          <input style="border: 1px solid white; padding: 10px; border-radius: 5px; color:#fff;" matInput
+            placeholder="Email" formControlName="email">
+          <mat-error *ngIf="form.controls.email.errors?.required">Email is required</mat-error>
+          <mat-error *ngIf="form.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <input style="border: 1px solid white; padding: 10px; border-radius: 5px; color:#fff;" matInput
+            placeholder="Password" formControlName="password">
+          <mat-error *ngIf="form.controls.password.errors?.required">Password is required</mat-error>
+          <mat-error *ngIf="form.controls.password.hasError('minlength')">Password isn't long enough, minimum of 6
+            characters</mat-error>
+        </mat-form-field>
+        
+        <button onMouseOver="this.style.color='#5BCFB4'"
+          onMouseOut="this.style.background='#5BCFB4', this.style.color='#fff'" mat-raised-button
+          style="background: #5BCFB4 !important; border: 1px solid #5BCFB4 !important; color: white !important;"
+          class="mat-elevation-z6 w-100 mt-3" type="submit">SIGN IN</button>
+
+        <a mat-button routerLink="/register" color="accent" class="w-100"> <span style="color:white;"> Don't have an
+            account? </span> Sign up now!</a>
+      </div>
+    </form>
+  </div>
+</mat-sidenav-container>
+
+<style>
+  button:hover {
+    background: transparent !important;
+    border: 1px solid #5BCFB4 !important;
+    color: #5BCFB4 !important;
+  }
+</style>

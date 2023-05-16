@@ -1,0 +1,264 @@
+<div id="overlay"></div>
+<mat-card-content fxLayoutAlign="center" *ngIf='showSpinner'>
+    <mat-spinner></mat-spinner>
+</mat-card-content>
+
+<div class="col-md-12">
+
+    <div class="col-md-6">
+        <div  class="p-2"> 
+            <div *ngIf='userName'>
+                <iframe [src]="url" width="90%" height="450px" frameborder="no">
+                    <a href="//www.fxblue.com">FX Blue - free tools and services for FX and CFD traders</a>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div  class="p-2"> 
+            <div *ngIf='userName'>
+                <a href="//www.fxblue.com/users/example/stats">
+                    <img [src]="secUrl"/>
+                </a>
+            </div>
+            <iframe [src]="investinCalendarUrl"width='450' height="400" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
+            <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">
+                <span style="font-size: 11px;color: #333333;text-decoration: none;">
+                    Real Time Economic Calendar provided by 
+                    <a href="https://za.Investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">
+                        Investing.com ZA
+                    </a>.
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-12">
+    <div class="col-md-3">
+        <div class="p-2" > 
+            <mat-card class="secondary-text-color p-4" *ngIf='tradingObj == 0'>
+                <div class="row">
+                    <div class="col-md-2" (click)="openTradingObjective()">
+                        <img src="assets/icons/plus.png" style="width: 25px;"/>  
+                    </div>
+                    <div class="col-md-8" style="float: left;">
+                        <p  style="text-align: center;color: black;"><b>Trading Objetive</b></p>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card *ngIf='tradingObj > 0'>
+                <div style="display: block">
+                    <canvas baseChart
+                        [data]="pieChartData"
+                        [labels]="pieChartLabels"
+                        [chartType]="pieChartType">
+                    </canvas>
+                    <div class="row" style="margin-top: 1vh;">
+                        <div class="col-md-3" style="float: left;">
+                            <label>Profit Target</label>
+                        </div>
+                        <div class="col-md-9" style="float: left;">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 1vh;">
+                        <div class="col-md-3" style="float: left;">
+                            <label>Time Period</label>
+                        </div>
+                        <div class="col-md-9" style="float: left;">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="border: 1px solid;">
+                    <iframe src="//www.fxblue.com/fxbluechart.aspx?c=ch_symbolprofit&id=example" frameborder="0" width="100%" height="200"><a href="//www.fxblue.com">FX Blue - free tools and services for FX and CFD traders</a></iframe>
+                </div>
+                <div class="col-md-6" style="float: left; border:1px solid">
+                    <iframe src="//www.fxblue.com/fxbluechart.aspx?c=ch_lotstradeddaily&id=example" frameborder="0" width="100%" height="200"><a href="//www.fxblue.com">FX Blue - free tools and services for FX and CFD traders</a></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="border: 1px solid;">
+                    <iframe src="//www.fxblue.com/fxbluechart.aspx?c=ch_accountstats&id=example" frameborder="0" width="100%" height="200"><a href="//www.fxblue.com">FX Blue - free tools and services for FX and CFD traders</a></iframe>
+                </div>
+                <div class="col-md-6" style='border: 1px solid;'>
+                    <iframe src="//www.fxblue.com/fxbluechart.aspx?c=ch_accountrisk&id=example" frameborder="0" width="100%" height="200"><a href="//www.fxblue.com">FX Blue - free tools and services for FX and CFD traders</a></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+
+    </div>
+</div>
+
+<!-- <div class="p-2" style="margin-top: 5vh; margin-left: 10vw;"> 
+        <mat-card class="secondary-text-color p-4">
+            <div class="row">
+                <div class="col-md-2" (click)="openDialog()">
+                    <img src="assets/icons/plus.png" style="width: 25px;"/>  
+                </div>
+                <div class="col-md-8" style="float: left;">
+                    <p  style="text-align: center;color: black;"><b>Trading journal</b></p>
+                </div>
+                <div class="col-md-2" style="float: left;">
+                    <img src="assets/icons/calendar.png" style="width: 20px;"/>  
+                </div>
+            </div>
+            <p style="text-align: center;font-size: small;margin-bottom: 0px;">Date and Time</p>
+
+            
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small> CURRENCY PAIR </small>
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small>{{item.currencyPair}}</small> 
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small> PRICE</small>
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small> {{item.price}}</small>
+                            
+                        </div>
+                    </div>
+                
+                        <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small> LONG/SHORT</small>
+                            
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small>{{item.length}}</small>
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-12" style="float: left;">
+                            <small>TREANDING DIRECTION</small>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small> WEEKLY</small>
+                            
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            
+                            <small>{{item.weekly}}</small>
+                        </div>
+                    </div>
+                
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small>D1</small>
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small>{{item.d1}}</small>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small>H4</small>
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small>{{item.h4}}</small>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small>H1</small>
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small> {{item.h1}}</small>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-12" style="float: left;">
+                            <small> TOOLS USER</small>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small>LOT SIZE USED</small>
+                            
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small>{{item.lotSize}}</small>
+                            
+                        </div>
+                    </div>
+            
+                
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-9" style="float: left;">
+                            <small>NUMBER OF TRADERS</small>
+                            
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                            <small>{{item.noOfTrades}}</small>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-12" style="float: left;">
+                            <small>Reason for entring trade</small>
+                            
+                        </div>
+                        <div class="col-md-12">
+                            <small> {{item.reason}}</small>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-12" style="float: left;">
+                            <small>COMMENT</small>
+                            
+                        </div>
+                        <div class="col-md-12">
+                            <small>{{item.comment}}</small>
+                            
+                        </div>
+                    </div>
+
+        </mat-card>
+    </div> -->

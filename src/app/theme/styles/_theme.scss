@@ -1,0 +1,102 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+@import 'theme-reset';
+.app{
+    &.indigo-light{
+        @import "skins/indigo-light";
+        @include angular-material-theme($indigo-light-theme);
+        @include theme-reset($indigo-light-theme);
+        background: #11172A;
+        height: 100%;
+    }
+    &.teal-light{
+        @import "skins/teal-light";
+        @include angular-material-theme($teal-light-theme);
+        @include theme-reset($teal-light-theme);
+    }
+    &.red-light{
+        @import "skins/red-light";
+        @include angular-material-theme($red-light-theme);
+        @include theme-reset($red-light-theme);
+    }
+    &.gray-light{
+        @import "skins/gray-light";
+        @include angular-material-theme($gray-light-theme);
+        @include theme-reset($gray-light-theme);
+    }
+    &.blue-dark{
+        @import "skins/blue-dark";
+        @include angular-material-theme($blue-dark-theme);
+        @include theme-reset($blue-dark-theme);
+    }
+    &.green-dark{
+        @import "skins/green-dark";
+        @include angular-material-theme($green-dark-theme);
+        @include theme-reset($green-dark-theme);
+    }
+    &.pink-dark{
+        @import "skins/pink-dark";
+        @include angular-material-theme($pink-dark-theme);
+        @include theme-reset($pink-dark-theme);
+    }
+    &.gray-dark{
+        @import "skins/gray-dark";
+        @include angular-material-theme($gray-dark-theme);
+        @include theme-reset($gray-dark-theme);
+    }
+}
+
+@media screen and (max-width: 767px){
+    .cdk-overlay-connected-position-bounding-box {
+        right:unset !important;
+        left: 170px !important;
+    }
+    .owl-theme .owl-nav {
+        margin-top: 10px;
+        text-align: center;
+        -webkit-tap-highlight-color: red !important;
+    }
+}
+.app.indigo-light .mat-menu-panel {
+    background: #11172A;
+}
+.app.indigo-light .mat-menu-panel span {
+    color: #fff;
+}
+.app.indigo-light .menu-item .mat-button.active-link .menu-icon {
+    background: transparent !important;
+    color: #fff;
+}
+
+.app {
+    height: auto;
+}
+
+.arb-card {
+    margin-top: 40px;
+}
+
+.arb-card p {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.arb-user-email {
+    margin-top: 20px;
+}
+
+.arb-user-checkbox {
+    margin-top: 20px;
+}
+
+.arb-user-checkbox label {
+    padding-right: 10px;
+    padding-top: 3px;
+}
+// #app {
+//     height: auto !important;
+// }
+.h-100 {
+    height: auto !important;
+}

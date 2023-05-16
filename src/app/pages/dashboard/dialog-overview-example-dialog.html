@@ -1,0 +1,180 @@
+ <!-- <div class="col-md-12" style="width: 70vw;">
+  <h4 style="text-align: center; width: 100%; margin-top: 5vh;">
+    Please write Trading Journal Information here
+  </h4>
+  
+  <form [formGroup]="dailySchedule">
+  <div class="row">
+    <div class="col-md-4">
+      <lable>CURRENCY PAIR</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>PRICE</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>LONG/SHORT</lable>
+      <input type="text" class="form-control"/>
+    </div>
+  </div> 
+  <div class="row"> 
+    <div class="col-md-4">
+      <lable>WEEKLY</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>D1</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>H4</lable>
+      <input type="text" class="form-control"/>
+    </div>
+  </div>
+ <div class="row">
+    <div class="col-md-4">
+      <lable>H1</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>RSI</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>MA</lable>
+      <input type="text" class="form-control"/>
+    </div>
+  </div>
+<div class="row">
+    <div class="col-md-4">
+      <lable>Trend Lines</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>LOT SIZE USED</lable>
+      <input type="text" class="form-control"/>
+    </div>
+    <div class="col-md-4">
+      <lable>NO OF TRADES</lable>
+      <input type="text" class="form-control"/>
+    </div>
+  </div>
+  <div class="row">
+  
+    <div class="col-md-12">
+      <lable>REASON FOR ENTRING TRADE</lable>
+      <textarea class="form-control"></textarea>
+    </div>
+   <div class="col-md-12">
+      <lable>COMMENT</lable>
+      <textarea class="form-control"></textarea>
+    </div> 
+  </div>
+  <div class="row" style="margin-top: 1vh;">
+    <div class="col-md-5" style="float: left;">
+
+    </div>
+    <div class="col-md-2" style="float: left;"> 
+       <span (click)='addItem()' >CLICK</span>
+    </div> 
+  </div> 
+</form>
+</div>
+<div class="container"> -->
+  <mat-card-content fxLayoutAlign="center"  style="width: 70vw;" *ngIf='showSpinner'>
+    <mat-spinner></mat-spinner>
+</mat-card-content>
+  
+  <form [formGroup]="tradingJournal" (ngSubmit)="onSubmit()" style="width: 70vw;"  *ngIf='!showSpinner'>
+      <h4 style="text-align: center; width: 100%; margin-top: 5vh;">
+        Please write Trading Journal Information here
+      </h4>
+    <div class="row">
+      <div class="col-md-4">
+        <lable>CURRENCY PAIR</lable>
+        <input type="text" class="form-control" formControlName="currencyPair"/>
+      </div>
+      <div class="col-md-4">
+        <lable>PRICE</lable>
+        <input type="text" class="form-control" formControlName="price"/>
+      </div>
+      <div class="col-md-4">
+        <lable>LONG/SHORT</lable>
+        <input type="text" class="form-control" formControlName="length"/>
+      </div>
+    </div> 
+
+    <div class="row"> 
+      <div class="col-md-4">
+        <lable>WEEKLY</lable>
+        <input type="text" class="form-control" formControlName="weekly"/>
+      </div>
+      <div class="col-md-4">
+        <lable>D1</lable>
+        <input type="text" class="form-control" formControlName="d1"/>
+      </div>
+      <div class="col-md-4">
+        <lable>H4</lable>
+        <input type="text" class="form-control" formControlName="h4"/>
+      </div>
+    </div>
+
+    <div class="row" formArrayName="quantities">
+      <div class="col-md-12" style="margin-top: 1vh;margin-bottom: 1vh;">
+
+        <div class="col-md-2" (click)="addTool()">
+          <img src="assets/icons/plus.png" style="width: 25px;"/>  
+        </div>
+      </div>
+      <div class="col-md-4"  *ngFor="let tool of tool().controls; let i=index" [formGroupName]="i" >
+        <lable>Tool Name</lable>
+        <input type="text" class="form-control" formControlName="toolName"/>
+        <lable>value</lable>
+        <input type="text" class="form-control" formControlName="value"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <lable>Trend Lines</lable>
+        <input type="text" class="form-control"  formControlName="trendLines"/>
+      </div>
+      <div class="col-md-4">
+        <lable>LOT SIZE USED</lable>
+        <input type="text" class="form-control"  formControlName="lotSize"/>
+      </div>
+      <div class="col-md-4">
+        <lable>NO OF TRADES</lable>
+        <input type="text" class="form-control"  formControlName="noOfTrades"/>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <lable>REASON FOR ENTRING TRADE</lable>
+      <textarea class="form-control"  formControlName="reason"></textarea>
+    </div>
+   <div class="col-md-12">
+      <lable>COMMENT</lable>
+      <textarea class="form-control"  formControlName="comment"></textarea>
+    </div> 
+  <!-- </div> -->
+  <div class="row" style="margin-top: 1vh;">
+    <div class="col-md-5" style="float: left;">
+
+    </div>
+    <div class="col-md-2" style="float: left;"> 
+      <button style="margin-top: 1vh;" type="submit" class="btn btn-success">Submit</button>
+    </div> 
+  </div> 
+
+
+
+   
+    
+    
+  </form>
+    
+  <br/>
+  <!-- {{this.productForm.value }} -->
+<!-- </div> -->

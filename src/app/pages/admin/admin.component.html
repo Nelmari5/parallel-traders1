@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">ID Number</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.idNumber}}</td>
+            <td>
+                <a href="/admin/arb-user?user_id={{user.idNumber}}"> View User </a>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>

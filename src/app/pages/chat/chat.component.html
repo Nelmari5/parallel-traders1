@@ -1,0 +1,56 @@
+<div class="container">
+    <h3 class=" text-center">Messaging</h3>
+    <div class="messaging">
+      <div class="inbox_msg">
+        <div class="inbox_people">
+          <div class="headind_srch">
+            <div class="recent_heading">
+              <h4>People</h4>
+            </div>
+          </div>
+          <div class="inbox_chat">
+            <div class="chat_list" *ngFor='let user of users'>
+              <div class="chat_people" *ngIf='user.userName != userName' (click)='clickedUser(user._id)'>
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>{{user.firstName}} <span class="chat_date">Nec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions 
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mesgs">
+          <div class="text-center" *ngIf='showSpiner'>
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <div class="msg_history" >
+            <span *ngFor='let message of messages'>
+                <div class="incoming_msg" *ngIf='message.type=="receive"'>
+                <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="received_msg">
+                    <div class="received_withd_msg">
+                    <p>{{message.message}} </p>
+                    <span class="time_date">{{message.send.substring(0,10)}} | {{message.send.substring(11,19)}}</span>
+                  </div>
+                </div>
+                </div>
+                <div class="outgoing_msg" *ngIf='message.type=="send"'>
+                <div class="sent_msg">
+                    <p>{{message.message}}</p>
+                    <span class="time_date"> {{message.send.substring(0,10)}} | {{message.send.substring(11,19)}} </span> </div>
+                </div>
+            </span>
+        </div>
+        <div class="type_msg" *ngIf='selected'>
+            <div class="input_msg_write">
+              <input type="text" [(ngModel)]='message' (input)='typing()' class="write_msg" style="padding: 10px;"  placeholder="Type a message" />
+              <button (click)='sendMessage()' class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>

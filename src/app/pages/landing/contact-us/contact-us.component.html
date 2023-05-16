@@ -1,0 +1,76 @@
+<div id="contact" class="mt-2 pt-3">
+    <div fxLayout="column" fxLayoutAlign="center center" class="title-section p-2 mb-2">  
+        <div class="aboutSection" id='About Us'>
+            <div class="container">
+                <div class="row">
+                    <div class="aboutSection_content col-md-6">
+                        <h5>More</h5>             
+                        <h1>About Us</h1>             
+                        <p class="secondary-text-color">Parallel Traders Pty Ltd is based out of Cape Town, South Africa.
+                            <br>
+                            <br>
+                            For people considering trading, Parallel Traders has created an incubative ecosystem for traders wanting more than just an exchange.
+                            <br>
+                            <br>
+                            We believe financial freedom should be accessible to all, therefore we offer access to finance for trading, arbitrage, algo copy trading, trading competitions, live trading rooms, educational courses and many more facilities to get you where you want to be.
+                            <br>
+                            <br>
+                            Our community is social, inclusive and transparent.
+                            We keep things fun and believe you should own your success!
+                            <br>
+                            <br>
+                            Services and features will be uploaded as they are completed so stick around for many great things to come.
+                        </p>
+                    </div>
+                    <div class="aboutSection_img col-md-6">
+                        <img src="assets/img/aboutImg.png" alt="logo" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Map -->
+    <section style="width:100%">
+        <div class="map_overlay box" style="background: #D63970;">
+            <iframe class="box" width="1920" height="440" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1920&amp;height=440&amp;hl=en&amp;q=Sea%20Point,%20Cape%20Town,%208005%20Cape%20Town+(Parallel%20Traders)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=74bde4beef344a824c92e775b1edf47f581bad6f'></script>
+        </div>
+    </section>
+    <!-- End Map -->
+    <div id='Contact Us' fxLayout="row wrap" fxLayoutAlign="center" style="margin-top: -140px;"> 
+        <mat-card class="contact-form p-4">
+            <h1 class="secondary-text-color title">Contact Us</h1>
+            <p class="secondary-text-color">Feel free to drop us an email and we'll get back to you within 24-48 hours</p>
+            <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit(contactForm.value)" fxLayout="row wrap">
+                <div fxFlex="100" class="mt-2">
+                    <mat-form-field class="w-100">
+                        <input style="color:white !important;" class="placeholder" matInput placeholder="Name" formControlName="name" required>
+                        <mat-error *ngIf="contactForm.controls.name.errors?.required">Name is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100" class="mt-2">
+                    <mat-form-field class="w-100">
+                        <input class="placeholder" matInput placeholder="Email" formControlName="email" required>
+                        <mat-error *ngIf="contactForm.controls.email.errors?.required">Email is required</mat-error>
+                        <mat-error *ngIf="contactForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100" class="mt-2">
+                    <mat-form-field class="w-100">
+                        <input class="placeholder" matInput placeholder="Phone" formControlName="phone" required>
+                        <mat-error *ngIf="contactForm.controls.phone.errors?.required">Phone is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100" class="mt-2">
+                    <mat-form-field class="w-100">
+                        <input class="placeholder" matInput placeholder="Message" formControlName="message" required>
+                        <mat-error *ngIf="contactForm.controls.message.errors?.required">Message is required</mat-error>
+                    </mat-form-field>
+                </div> 
+                <div class="w-100 py-4 text-center">
+                    <button mat-raised-button color="accent" type="submit" class="send">
+                        Send</button>
+                </div> 
+            </form>
+        </mat-card>
+    </div> 
+</div>
